@@ -7,6 +7,7 @@ import { Button } from "../../components/button/button"
 import { Matrix } from "../../components/matrix/matrix"
 import { isJsonValid, parseJson } from "../../helpers/jsonhelper"
 import { isMatrixValid } from "../../validators/rotarmatrixvalidator"
+import styles from './rotatematrixcontainer.module.css'
 
 interface IRotateMatrixContainerProps {
 
@@ -63,8 +64,11 @@ export const RotateMatrixContainer: React.FC<IRotateMatrixContainerProps> = () =
         <React.Fragment>
             <div className="center-element">
                 <Label text="Ingresar Matriz"></Label>
-                <Input type="text" value={matrixTextValue} onChange={onHandleChangeMatrixValue}></Input>
+                <Input type="text" className={styles.matrixinput} value={matrixTextValue} onChange={onHandleChangeMatrixValue}></Input>
                 <Button text="Rotar" onClick={onRotateClick} ></Button>
+            </div>
+            <div className="center-element">
+                { matrixTextValue }
             </div>
             <div className="center-element">
                 {
